@@ -1,5 +1,6 @@
 # Minesweeper
 The minesweeper game created as a 9x9 grid with html, css and javascript.
+https://codepen.io/beumsk/pen/JJYqop
 
 TODO:
 * find a way to flag on mobile
