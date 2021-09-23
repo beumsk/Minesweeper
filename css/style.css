@@ -69,8 +69,6 @@ header {
 .play:hover {
   color: whitesmoke;
   background: #2980b9;
-  background-image: linear-gradient(to top left, #2980b9, #1abc9c);
-  background-size: 120%;
 }
 
 
@@ -132,26 +130,24 @@ section {
   height: 10%;
   cursor: pointer;
   text-align: center;
-  border: solid #3498db 1px;
+  border: solid #2980b9 1px;
   color: #333;
 }
 
-.backgrounded {
+.box.backgrounded {
   background: #2980b9;
-  background-image: linear-gradient(to top left, #2980b9, #1abc9c);
-  background-size: 150%;
   color: transparent;
+  border-color: transparent;
 }
 
-.backgrounded:hover {
+.box.backgrounded:hover {
   background: #3498db;
 }
 
-.flagged {
+.box.flagged {
   background: #e74c3c !important;
-  background-image: linear-gradient(to top left, #c0392b, #e74c3c , #9b59b6) !important;
-  background-size: 150%;
   color: transparent;
+  border-color: transparent;
 }
 
 /* fix bomb icon to take full width; to uncomment when fix found for click */
