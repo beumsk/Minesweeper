@@ -1,10 +1,8 @@
 
 // find a way to flag on mobile
-// TOFIX when using bomb icon --> can't always click on bomb <> size of bomb are too small
 // add options ? bigger table and/or more bombs
 
-// var bomb = '<i class="fa fa-bomb" aria-hidden="true"></i>';
-var bomb = "!!!";
+var bomb = '<i class="fa fa-bomb" aria-hidden="true"></i>';
 var smile = '<i class="fa fa-smile-o fa-2x" aria-hidden="true"></i>';
 var frown = '<i class="fa fa-frown-o fa-2x" aria-hidden="true"></i>';
 
@@ -29,15 +27,13 @@ var timeElt = document.querySelector(".timeN");
 playElt.addEventListener("click", startGame);
                          
 function startGame() {
-  clearInterval(checkPageInterval);
+  // clearInterval(checkPageInterval);
   addBombs(10);
   
   // click and right click handler
   for (var i=0; i<boxElts.length; i++) {
     boxElts[i].addEventListener("click", checkBoxes);
     boxElts[i].addEventListener("contextmenu", manageFlag);
-    // boxElts[i].classList.remove("backgrounded");
-    // console.log("test");
     if (boxElts[i].innerHTML !== bomb) {
       addNumbers(boxElts[i], boxElts[i].parentNode.rowIndex, boxElts[i].cellIndex);
     }
@@ -61,7 +57,7 @@ function addBombs(number) {
 }
 
 function checkBoxes(e) {
-  var curr = e.target;
+  var curr = e.currentTarget;
   if (!curr.classList.contains("flagged")) {
     curr.classList.remove("backgrounded");
     // click on bomb
@@ -83,7 +79,7 @@ function checkBoxes(e) {
 
 function manageFlag(e) {
   e.preventDefault();
-  var curr = e.target;
+  var curr = e.currentTarget;
   if (!curr.classList.contains("flagged") && flagCount > 0) {
     flagCount--;
     curr.classList.add("flagged");
@@ -211,12 +207,12 @@ function resetGame() {
 }
 
 // handle focus of the page
-function checkPageFocus() {
-  if (document.hasFocus()) {
-    modalElt.classList.remove("hidden");
-  }
-  else {
-    modalElt.classList.add("hidden");
-  }
-}
-var checkPageInterval = setInterval(checkPageFocus, 300);
+// function checkPageFocus() {
+//   if (document.hasFocus()) {
+//     modalElt.classList.remove("hidden");
+//   }
+//   else {
+//     modalElt.classList.add("hidden");
+//   }
+// }
+// var checkPageInterval = setInterval(checkPageFocus, 300);
